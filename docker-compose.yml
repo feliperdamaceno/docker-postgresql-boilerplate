@@ -1,0 +1,29 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:15.5
+    container_name: postgres_service
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: YOUR_PASSWORD_HERE
+    volumes:
+    - postgres_database:/var/lib/postgresql
+  pgadmin:
+    image: dpage/pgadmin4:8.1
+    container_name: pgadmin_service
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@superuser.com
+      PGADMIN_DEFAULT_PASSWORD: YOUR_PASSWORD_HERE
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+volumes:
+  postgres_database:
+    driver: local
+  pgadmin_data:
+    driver: local
