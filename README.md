@@ -1,8 +1,8 @@
 ## Docker PostgreSQL Boilerplate
 
-### 1. Database container setup:
+### 1. Postgres Setup:
 
-First, go to the **docker-compose.yml** file and setup a password for the environment variables `POSTGRES_PASSWORD` and `PGADMIN_DEFAULT_PASSWORD`.
+Use `.env.example` file as a reference to setup the required environment variables.
 
 After doing that, run the following command to create your Postgres service:
 
@@ -10,26 +10,24 @@ After doing that, run the following command to create your Postgres service:
 docker compose -p postgres up -d
 ```
 
-Note: To take down the docker services, just use:
+To take down the docker services, just use:
 
 ```bash
 docker-compose -p postgres down
 ```
 
-### 2. pgAdmin setup:
+### 2. pgAdmin Setup:
 
-Once your containers are up and running, navigate to http://localhost:8000 to access your pgAdmin service, then login with the email admin@superuser.com, and the password you setup in the `PGADMIN_DEFAULT_PASSWORD` variable on your **docker-compose.yml** file.
+Once your containers are up and running, navigate to http://localhost:8080 to access your pgAdmin service, then login with the credentials set in your `.env` file.
 
 Next, create a new server connection and name your server as desired.
 
-Finally, on the Connection tab, add the **Host name/address** as **postgres**, Username as **admin**, Port is **5432**, and the password as `POSTGRES_PASSWORD` setup on the **docker-compose.yml** file, then click save.
+Finally, in the Connection tab, set **Host name/address** as **postgres**, **Username** and **Password** as set in your `.env` file, and **Port** number as **5432**, then click save.
 
-After doing that, pgAdmin should be connected to the Postgres database.
+Once done, pgAdmin should be connected to the Postgres database.
 
-### 3. Environment variables setup:
+When consuming your Postgres database, use the following URL structure:
 
-Create a .env file with a variable called `POSTGRES_URL`, following the example below:
-
-```bash
-POSTGRES_URL=postgresql://username:password@localhost:port/database
+```
+postgresql://USERNAME:PASSWORD@localhost:PORT/DATABASE_NAME
 ```
