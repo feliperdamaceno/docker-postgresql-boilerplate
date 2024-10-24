@@ -1,4 +1,8 @@
-## Docker PostgreSQL Boilerplate
+## docker-postgresql-boilerplate
+
+A Docker PostgreSQL boilerplate with Docker Compose, including PgAdmin for database management, and a detailed setup guide for easy configuration and deployment.
+
+## How to Setup
 
 ### 1. Postgres Setup:
 
@@ -31,3 +35,17 @@ When consuming your Postgres database, use the following URL structure:
 ```
 postgresql://USERNAME:PASSWORD@localhost:PORT/DATABASE_NAME
 ```
+
+## Licence
+
+This is an open-source project and is available under the [**MIT License**](LICENSE). You are free to use, modify, and distribute the code in accordance with the terms of the license.
+
+## Contributors
+
+Contributions are highly appreciated! If you encounter any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
+
+[feliperdamaceno](https://github.com/feliperdamaceno)
+
+## Contact me
+
+Linkedin: [feliperdamaceno](https://www.linkedin.com/in/feliperdamaceno)
